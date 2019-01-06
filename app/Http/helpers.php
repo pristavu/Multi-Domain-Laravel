@@ -1,52 +1,54 @@
 <?php
-if (!function_exists('shop')) {
+
+if ( ! function_exists( 'site' ) ) {
     /**
-     * Get shop by subdomain
+     * Get site by domain
      *
-     * @param null $subdomain
-     * @return \App\Shop
+     * @param null $domain
+     * @return \App\Site
      */
 
-    function shop($subdomain = null)
-    {
-        $subdomain = $subdomain ?: request()->route('subdomain');
-        $shop = \App\Shop::where('domain', $subdomain)->first();
-        if (!$shop) {
-            return new \App\Shop;
+    function site( $domain = null ) {
+        $domain = $domain ?: request()->route( 'domain' );
+        $site   = \App\Site::where( 'domain', $domain )->first();
+
+        if ( ! $site ) {
+            return new \App\Site;
         }
-        return $shop;
+
+        return $site;
     }
 }
 
-if (!function_exists('domain')) {
+if ( ! function_exists( 'domain' ) ) {
     /**
      * Get current domain
      *
-     * @param null $subdomain
+     * @param null $domain
      * @return \App\Shop
      */
 
-    function domain()
-    {
-        $subdomain = request()->route('subdomain');
-        return $subdomain;
+    function domain() {
+        $domain = request()->route( 'domain' );
+
+        return $domain;
     }
 }
 
-if (!function_exists('domain_route')) {
+if ( ! function_exists( 'domain_route' ) ) {
     /**
      * Generate the URL to a named route.
      * This is a modified version of Laravel's route() function
-     * Pass subdomain value automatically
+     * Pass domain value automatically
      *
      * @param  array|string $name
      * @param  mixed $parameters
      * @param  bool $absolute
      * @return string
      */
-    function domain_route($name, $parameters = [], $absolute = true)
-    {
-        $parameters['subdomain'] = request()->route('subdomain');
-        return app('url')->route($name, $parameters, $absolute);
+    function domain_route( $name, $parameters = [], $absolute = true ) {
+        $parameters['domain'] = request()->route( 'domain' );
+
+        return app( 'url' )->route( $name, $parameters, $absolute );
     }
 }

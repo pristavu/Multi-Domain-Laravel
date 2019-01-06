@@ -31,11 +31,7 @@
             <footer class="footer mt-3">
                 <div class="container-fluid">
                     <div class="footer-content text-center small">
-                        <span class="text-muted">
-                            &copy; {{ date('Y') }} All rights reserved.<br>
-                             <a href="{{ config('app.url') }}" title="{{ config('app.name') }}" target="_blank">{{ config('app.name') }}</a> &mdash; Demo Application.<br>
-                            Built on top of <a href="https://graindashboard.com" title="Grain Dashboard" target="_blank">Grain Dashboard</a> . Developed by <a href="https://digitalwheat.com" title="DigitalWheat" target="_blank">DigitalWheat</a>.
-                        </span>
+                        <span class="text-muted">&copy; {{ date('Y') }} All rights reserved.</span>
                     </div>
                 </div>
             </footer>

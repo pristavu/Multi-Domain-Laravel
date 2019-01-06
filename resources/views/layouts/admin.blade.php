@@ -19,13 +19,13 @@
 <body>
 <div class="sidebar-main">
     <div class="sidebar-header">
-        <a href="{{ domain_route('shop.admin.home') }}" title="{{ config('app.name') }}"><img src="{{ asset('shop/admin/img/logo.png') }}"></a>
+        <a href="{{ domain_route('site.admin.home') }}" title="{{ config('app.name') }}"><img src="{{ asset('site/admin/img/logo.png') }}"></a>
     </div>
     <ul class="sidebar-nav">
         <li class="nav-item active"><a class="item" href="#" title="Dashboard"><i class="icon fas fa-home"></i></a></li>
         <li class="nav-item"><a class="item" href="#" title="Settings"><i class="icon fas fa-cog"></i></a></li>
         <li class="nav-item divider"></li>
-        <li class="nav-item filled reverse"><a class="item" href="{{ domain_route('shop.home') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Logout"><i class="icon fas fa-power-off"></i></a></li>
+        <li class="nav-item filled reverse"><a class="item" href="{{ domain_route('site.home') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Logout"><i class="icon fas fa-power-off"></i></a></li>
     </ul>
 </div>
 

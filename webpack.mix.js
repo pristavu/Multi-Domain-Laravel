@@ -14,17 +14,22 @@ let mix = require('laravel-mix');
 
 /* GENERAL APP  */
 mix.js('resources/assets/app/js/app.js', 'public/app/js')
-   .sass('resources/assets/app/sass/app.scss', 'public/app/css');
+   .sass('resources/assets/app/sass/app.scss', 'public/app/css').version();
 
 
 /*  SHOP FRONTEND  */
 mix.js('resources/assets/shop/js/app.js', 'public/shop/js')
-    .sass('resources/assets/shop/sass/app.scss', 'public/shop/css');
+    .sass('resources/assets/shop/sass/app.scss', 'public/shop/css').version();
 
 /*  SHOP ADMIN  */
 mix.js('resources/assets/shop/admin/js/app.js', 'public/shop/admin/js')
-    .sass('resources/assets/shop/admin/sass/app.scss', 'public/shop/admin/css');
+    .sass('resources/assets/shop/admin/sass/app.scss', 'public/shop/admin/css').version();
 
 /*  APPLICATION ADMIN  */
 mix.js('resources/assets/admin/js/app.js', 'public/app_admin/js')
-    .sass('resources/assets/admin/sass/app.scss', 'public/app_admin/css');
+    .sass('resources/assets/admin/sass/app.scss', 'public/app_admin/css').version();
+
+
+if (mix.config.inProduction) {
+  mix.version();
+}

@@ -2,13 +2,12 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\CheckShopDomain;
 use App\Http\Middleware\IsAppAdmin;
-use App\Http\Middleware\IsShopManager;
+use App\Http\Middleware\IsSiteManager;
+use App\Http\Middleware\CheckSiteDomain;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
-class Kernel extends HttpKernel
-{
+class Kernel extends HttpKernel {
     /**
      * The application's global HTTP middleware stack.
      *
@@ -34,6 +33,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
+            // \App\Http\Middleware\StartSessionCustom::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
@@ -54,16 +54,16 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'shop.domain' => CheckShopDomain::class,
-        'shop.is_manager' => IsShopManager::class,
-        'app.is_admin' => IsAppAdmin::class,
+        'auth'            => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic'      => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'        => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers'   => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can'             => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'           => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'signed'          => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle'        => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'site.domain'     => CheckSiteDomain::class,
+        'site.is_manager' => IsSiteManager::class,
+        'app.is_admin'    => IsAppAdmin::class,
     ];
 }

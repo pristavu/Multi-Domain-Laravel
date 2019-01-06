@@ -11,9 +11,9 @@ return [
     | to use as your default connection for all database work. Of course
     | you may use many connections at once using the Database library.
     |
-    */
+     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default'     => env( 'DB_CONNECTION', 'mysql' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,53 +29,76 @@ return [
     | so make sure you have the driver for your particular database of
     | choice installed on your machine before you begin development.
     |
-    */
+     */
 
     'connections' => [
 
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
+        'sqlite'  => [
+            'driver'   => 'sqlite',
+            'database' => env( 'DB_DATABASE', database_path( 'database.sqlite' ) ),
+            'prefix'   => '',
         ],
 
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
+        'mysql'   => [
+            'driver'      => 'mysql',
+            'host'        => env( 'DB_HOST', '127.0.0.1' ),
+            'port'        => env( 'DB_PORT', '3306' ),
+            'database'    => env( 'DB_DATABASE', 'itv' ),
+            'username'    => env( 'DB_USERNAME', 'itv' ),
+            'password'    => env( 'DB_PASSWORD', '' ),
+            'unix_socket' => env( 'DB_SOCKET', '' ),
+            'charset'     => 'utf8mb4',
+            'collation'   => 'utf8mb4_unicode_ci',
+            'prefix'      => '',
+            'strict'      => true,
+            'engine'      => null,
         ],
 
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
+        'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => env( 'DB_HOST_MONGODB', 'localhost' ),
+            'port'     => env( 'DB_PORT_MONGODB', 27017 ),
+            'database' => env( 'DB_DATABASE_MONGODB', 'itv' ),
+            'username' => env( 'DB_USERNAME_MONGODB' ),
+            'password' => env( 'DB_PASSWORD_MONGODB' ),
+            'options'  => [
+                // 'database'   => 'admin', // sets the authentication database required by mongo 3
+                // 'replicaSet' => 'replicaSetName',
+            ],
         ],
 
-        'sqlsrv' => [
-            'driver' => 'sqlsrv',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
+        'pgsql'   => [
+            'driver'   => 'pgsql',
+            'host'     => env( 'DB_HOST', '127.0.0.1' ),
+            'port'     => env( 'DB_PORT', '5432' ),
+            'database' => env( 'DB_DATABASE', 'forge' ),
+            'username' => env( 'DB_USERNAME', 'forge' ),
+            'password' => env( 'DB_PASSWORD', '' ),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+            'sslmode'  => 'prefer',
+        ],
+
+        'sqlsrv'  => [
+            'driver'   => 'sqlsrv',
+            'host'     => env( 'DB_HOST', 'localhost' ),
+            'port'     => env( 'DB_PORT', '1433' ),
+            'database' => env( 'DB_DATABASE', 'forge' ),
+            'username' => env( 'DB_USERNAME', 'forge' ),
+            'password' => env( 'DB_PASSWORD', '' ),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+        ],
+
+        'redis'   => [
+            'client'  => 'predis',
+            'default' => [
+                'host'     => env( 'REDIS_HOST', '127.0.0.1' ),
+                'password' => env( 'REDIS_PASSWORD', null ),
+                'port'     => env( 'REDIS_PORT', 6379 ),
+                'database' => 0,
+            ],
         ],
 
     ],
@@ -89,9 +112,9 @@ return [
     | your application. Using this information, we can determine which of
     | the migrations on disk haven't actually been run in the database.
     |
-    */
+     */
 
-    'migrations' => 'migrations',
+    'migrations'  => 'migrations',
 
     /*
     |--------------------------------------------------------------------------
@@ -102,16 +125,16 @@ return [
     | provides a richer set of commands than a typical key-value systems
     | such as APC or Memcached. Laravel makes it easy to dig right in.
     |
-    */
+     */
 
-    'redis' => [
+    'redis'       => [
 
-        'client' => 'predis',
+        'client'  => 'predis',
 
         'default' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
+            'host'     => env( 'REDIS_HOST', '127.0.0.1' ),
+            'password' => env( 'REDIS_PASSWORD', null ),
+            'port'     => env( 'REDIS_PORT', 6379 ),
             'database' => 0,
         ],
 

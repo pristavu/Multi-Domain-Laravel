@@ -33,10 +33,8 @@
                 <div class="form-group">
                     <label for="company_domain">Shop Domain</label>
                     <div class="input-group">
-                        <input id="company_domain" name="company_domain" value="{{ old('company_domain') }}" type="text" class="form-control" placeholder="acme" aria-label="Comapny domain" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon2">.{{ config('app.domain') }}</span>
-                        </div>
+                        <input id="company_domain" name="company_domain" value="{{ old('company_domain') }}" type="text" class="form-control" placeholder="acme.com" aria-label="Comapny domain" aria-describedby="basic-addon2">
+                       
                     </div>
                 </div>
 

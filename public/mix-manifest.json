@@ -1,10 +1,10 @@
 {
-    "/app/js/app.js": "/app/js/app.js",
-    "/app/css/app.css": "/app/css/app.css",
-    "/shop/css/app.css": "/shop/css/app.css",
-    "/shop/admin/css/app.css": "/shop/admin/css/app.css",
-    "/app_admin/css/app.css": "/app_admin/css/app.css",
-    "/shop/js/app.js": "/shop/js/app.js",
-    "/shop/admin/js/app.js": "/shop/admin/js/app.js",
-    "/app_admin/js/app.js": "/app_admin/js/app.js"
+    "/app/js/app.js": "/app/js/app.js?id=77b6538e30b86162e899",
+    "/app/css/app.css": "/app/css/app.css?id=7f8d85329dfbdd10b495",
+    "/site/css/app.css": "/site/css/app.css?id=20c0196d92608ed313a9",
+    "/site/admin/css/app.css": "/site/admin/css/app.css?id=4b4200fd44620e713505",
+    "/app_admin/css/app.css": "/app_admin/css/app.css?id=4b4200fd44620e713505",
+    "/site/js/app.js": "/site/js/app.js?id=9adb8118f5079699667a",
+    "/site/admin/js/app.js": "/site/admin/js/app.js?id=c2d0770275cac5486d66",
+    "/app_admin/js/app.js": "/app_admin/js/app.js?id=38558e5eb0d3887cf4b3"
 }

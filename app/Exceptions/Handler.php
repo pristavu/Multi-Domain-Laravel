@@ -63,16 +63,16 @@ class Handler extends ExceptionHandler
     protected function unauthenticated($request, AuthenticationException $exception)
     {
 
-        /*
-         * see https://stackoverflow.com/questions/45340855/laravel-5-5-change-unauthenticated-login-redirect-url
-        $subdomain = request()->route('subdomain');
+        
+        //  // * see https://stackoverflow.com/questions/45340855/laravel-5-5-change-unauthenticated-login-redirect-url
+        // $domain = request()->route('domain');
 
-        if($subdomain){
-            return $request->expectsJson()
-                ? response()->json(['message' => $exception->getMessage()], 401)
-                : redirect()->guest(domain_route('shop.login'));
-        }
-        */
+        // if($domain){
+        //     return $request->expectsJson()
+        //         ? response()->json(['message' => $exception->getMessage()], 401)
+        //         : redirect()->guest(domain_route('site.login'));
+        // }
+        
 
         return $request->expectsJson()
             ? response()->json(['message' => $exception->getMessage()], 401)

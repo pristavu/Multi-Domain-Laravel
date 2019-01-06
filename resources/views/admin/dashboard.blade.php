@@ -16,23 +16,19 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Shop</th>
+                            <th scope="col">Site</th>
                             <th scope="col">Domain</th>
                             <th scope="col">Date Created</th>
                             <th scope="col">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($shops as $shop)
+                        @foreach($sites as $site)
                         <tr>
-                            <th scope="row">
-                                {{ $shop->id }}
-                            </th>
-                            <td>
-                                {{ $shop->company_name }}
-                            </td>
-                            <td>http://{{ $shop->domain }}.{{ config('app.domain') }}</td>
-                            <td>{{ $shop->created_at }}</td>
+                            <th scope="row">{{ $site->id }}</th>
+                            <td>{{ $site->company_name }}</td>
+                            <td>{{ $site->domain }}</td>
+                            <td>{{ $site->created_at }}</td>
                             <td nowrap="">
                                 <button type="button" class="btn btn-outline-primary btn-sm">
                                     <i class="fas fa-pencil-alt"></i>
@@ -52,7 +48,5 @@
             </div>
         </div>
     </div>
-
-
 
 @endsection
